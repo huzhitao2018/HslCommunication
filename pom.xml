@@ -1,0 +1,189 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.gitee.hjj520</groupId>
+
+    <artifactId>payment-core</artifactId>
+
+    <version>0.0.1-RELEASE</version>
+
+    <name>payment-core</name>
+
+    <description>a project aboutpayment</description>
+
+    <url>https://gitee.com/hjj520/payment-core</url>
+
+    <licenses>
+
+       <license>
+
+           <name>The ApacheSoftware License, Version 2.0</name>
+
+           <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+
+           <distribution>repo</distribution>
+
+       </license>
+
+    </licenses>
+
+    <developers>
+
+       <developer>
+
+           <name>huzhitao</name>
+
+           <email>748838309@qq.com</email>
+
+       </developer>
+
+    </developers>
+
+    <scm>
+
+       <tag>master</tag>
+
+       <connection>https://github.com/huzhitao2018/HslCommunication.git</connection>
+
+       <developerConnection>https://github.com/huzhitao2018</developerConnection>
+
+       <url>https://github.com/huzhitao2018/HslCommunication.git</url>
+
+    </scm>
+
+ 
+
+    <profiles>
+
+       <profile>
+
+           <id>release</id>
+
+           <build>
+
+              <plugins>
+
+                  <!-- Source -->
+
+                  <plugin>
+
+                     <groupId>org.apache.maven.plugins</groupId>
+
+                     <artifactId>maven-source-plugin</artifactId>
+
+                     <version>2.2.1</version>
+
+                     <executions>
+
+                         <execution>
+
+                            <phase>package</phase>
+
+                            <goals>
+
+                                <goal>jar-no-fork</goal>
+
+                            </goals>
+
+                         </execution>
+
+                     </executions>
+
+                  </plugin>
+
+                  <!-- Javadoc -->
+
+                  <plugin>
+
+                     <groupId>org.apache.maven.plugins</groupId>
+
+                     <artifactId>maven-javadoc-plugin</artifactId>
+
+                     <version>2.9.1</version>
+
+                     <executions>
+
+                         <execution>
+
+                            <phase>package</phase>
+
+                            <goals>
+
+                                <goal>jar</goal>
+
+                            </goals>
+
+                         </execution>
+
+                     </executions>
+
+                  </plugin>
+
+                  <!-- GPG -->
+
+                  <plugin>
+
+                     <groupId>org.apache.maven.plugins</groupId>
+
+                     <artifactId>maven-gpg-plugin</artifactId>
+
+                     <version>1.5</version>
+
+                     <executions>
+
+                         <execution>
+
+                            <phase>verify</phase>
+
+                            <goals>
+
+                                <goal>sign</goal>
+
+                            </goals>
+
+                         </execution>
+
+                     </executions>
+
+                  </plugin>
+
+              </plugins>
+
+           </build>
+
+           <distributionManagement>
+
+              <snapshotRepository>
+
+                  <id>sonatype</id>
+
+                  <url>
+
+                     https://oss.sonatype.org/content/repositories/snapshots/
+
+                  </url>
+
+              </snapshotRepository>
+
+              <repository>
+
+                  <id>sonatype</id>
+
+                  <url>
+
+                     https://oss.sonatype.org/service/local/staging/deploy/maven2/
+
+                  </url>
+
+              </repository>
+
+           </distributionManagement>
+
+       </profile>
+
+    </profiles>
+
+</project>
