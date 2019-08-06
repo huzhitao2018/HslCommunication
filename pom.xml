@@ -4,11 +4,11 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github</groupId>
+    <groupId>com.github.huzhitao2018</groupId>
 
     <artifactId>HslCommunication</artifactId>
 
-    <version>0.0.1-RELEASE</version>
+    <version>1.0</version>
 
     <name>HslCommunication</name>
 
