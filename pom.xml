@@ -4,17 +4,17 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.gitee.hjj520</groupId>
+    <groupId>com.github</groupId>
 
-    <artifactId>payment-core</artifactId>
+    <artifactId>HslCommunication</artifactId>
 
     <version>0.0.1-RELEASE</version>
 
-    <name>payment-core</name>
+    <name>HslCommunication</name>
 
-    <description>a project aboutpayment</description>
+    <description>java-s7-plc</description>
 
-    <url>https://gitee.com/hjj520/payment-core</url>
+    <url>https://github.com/huzhitao2018/HslCommunication</url>
 
     <licenses>
 
