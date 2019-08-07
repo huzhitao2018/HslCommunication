@@ -63,95 +63,65 @@
             <id>release</id>
 
             <build>
-
                 <plugins>
-
-                    <!-- Source -->
-
                     <plugin>
-
                         <groupId>org.apache.maven.plugins</groupId>
-
-                        <artifactId>maven-source-plugin</artifactId>
-
-                        <version>2.2.1</version>
-
-                        <executions>
-
-                            <execution>
-
-                                <phase>package</phase>
-
-                                <goals>
-
-                                    <goal>jar</goal>
-
-                                </goals>
-
-                            </execution>
-
-                        </executions>
-
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <source>1.8</source>
+                            <target>1.8</target>
+                        </configuration>
                     </plugin>
-
-                    <!-- Javadoc -->
-
                     <plugin>
-
                         <groupId>org.apache.maven.plugins</groupId>
-
-                        <artifactId>maven-javadoc-plugin</artifactId>
-
-                        <version>2.9.1</version>
-
-                        <executions>
-
-                            <execution>
-
-                                <phase>package</phase>
-
-                                <goals>
-
-                                    <goal>jar</goal>
-
-                                </goals>
-
-                            </execution>
-
-                        </executions>
-
-                    </plugin>
-
-                    <!-- GPG -->
-
-                    <plugin>
-
-                        <groupId>org.apache.maven.plugins</groupId>
-
                         <artifactId>maven-gpg-plugin</artifactId>
-
                         <version>1.5</version>
-
                         <executions>
-
                             <execution>
-
+                                <id>sign-artifacts</id>
                                 <phase>verify</phase>
-
                                 <goals>
-
                                     <goal>sign</goal>
-
                                 </goals>
-
                             </execution>
-
                         </executions>
-
                     </plugin>
-
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.2.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.9.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <configuration>
+                            <classesDirectory>src</classesDirectory>
+                            <excludes>
+                                <exclude>**</exclude>
+                            </excludes>
+                        </configuration>
+                    </plugin>
                 </plugins>
-
             </build>
             <distributionManagement>
                 <snapshotRepository>
