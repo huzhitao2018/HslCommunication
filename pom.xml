@@ -154,15 +154,17 @@
 
            </build>
 		   <distributionManagement>
-                <snapshotRepository>
-                    <id>sonatype</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-                </snapshotRepository>
-                <repository>
-                    <id>sonatype</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
+				<snapshotRepository>
+				  <id>sonatype</id>
+				  <name>Sonatype Nexus Snapshots</name>
+				  <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+				</snapshotRepository>
+				<repository>
+				  <id>sonatype</id>
+				  <name>Nexus Release Repository</name>
+				  <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
+		  </distributionManagement>
 
        </profile>
 
